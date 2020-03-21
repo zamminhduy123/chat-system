@@ -1,0 +1,24 @@
+{
+  "name": "simple-chat-system",
+  "version": "1.0.0",
+  "description": "a simple chat system with socket.io express and jQuery",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zamminhduy123/chat-system.git"
+  },
+  "author": "Duy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zamminhduy123/chat-system/issues"
+  },
+  "homepage": "https://github.com/zamminhduy123/chat-system#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}

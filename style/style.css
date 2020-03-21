@@ -1,0 +1,227 @@
+html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid transparent;
+    overflow: hidden;
+}
+
+#login-area {
+    width: 500px;
+    height: 300px;
+    border: 1px solid purple;
+    border-radius: 10%;
+    margin: auto;
+    margin-top: 150px;
+}
+
+#login-area #login-text{
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+    color: palevioletred;
+}
+
+#login-area #login-form-area {
+    width:100%;
+    margin-top: 50px;
+    text-align: center;
+}
+#login-area #login-form-area #login-form #username{
+    height: 50px;
+    width: 300px;
+    padding: 0px 5px;
+    font-size: 26px;
+    outline-offset: 0;
+    outline-color: purple;
+}
+#login-area #login-form-area #login-form #login-submit {
+    font-size: 26px;
+    background-color: transparent;
+    border: 1px solid black;
+    height: 52px;
+    width: 100px;
+    padding: 2px;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+#login-area #login-form-area #login-form #login-submit:hover{
+    color: #FFF;
+    background-color:palevioletred;
+}
+
+#chat-area {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+	background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+}
+
+#chat-area #online-user {
+    width: 20%;
+    height: 80%;
+    margin: 70px 0px 70px 130px;
+    border: 1px solid black;
+    border-radius: 3% !important;
+    background-color: rgba(0,0,0,0.4) !important;
+    float: left;
+}
+
+#chat-area #online-user #online-user-text {
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+    text-align: center;
+}
+
+#chat-area #online-user #online-user-text h1 {
+    margin: 0;
+    padding: 0;
+}
+
+#chat-area #online-user #online-user-name {
+    margin-top: 50px;
+}
+
+#chat-area #online-user #online-user-name #user-list {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#chat-area #online-user #online-user-name #user-list li {
+    list-style-type: none;
+    font-weight: bold;
+    margin-top:  10px;
+}
+
+
+
+
+.card{
+    height: 500px;
+    border-radius: 15px !important;
+    background-color: rgba(0,0,0,0.4) !important;
+}
+
+.card-header{
+    border-radius: 15px 15px 0 0 !important;
+    border-bottom: 0 !important;
+}
+
+.search{
+    border-radius: 15px 0 0 15px !important;
+    background-color: rgba(0,0,0,0.3) !important;
+    border:0 !important;
+    color:white !important;
+}
+.search:focus{
+    box-shadow:none !important;
+    outline:0px !important;
+}
+
+.search_btn{
+    height: 100%;
+    border-radius: 0 15px 15px 0 !important;
+    background-color: rgba(0,0,0,0.3) !important;
+    border:0 !important;
+    color: white !important;
+    cursor: pointer;
+}
+
+.input-group-prepend{
+    display: inline-block;
+}
+.form-control{
+    width: 80%;
+    height: 120%;
+    display:inline-block;
+}
+
+#message-area {
+    width: 60%;
+    height: 80%;
+    float: right;
+    margin: 70px 170px 70px 0px;
+    border: 1px solid black;
+    border-radius: 3% !important;
+    background-color: rgba(0,0,0,0.4) !important;
+}
+
+#display-message {
+    width: 100%;
+    height: 85%;
+    border-top: 1px solid transparent;
+}
+
+#message {
+    float:left;
+    margin:0;
+    margin-top: 15px;
+}
+
+
+
+#message li {
+    margin-bottom: 5px;
+    list-style-type: none;
+    padding: 10px 10px;
+    border-radius: 15px !important;
+    background-color: rgba(0.3,0.3,0.3,0.2) !important;
+    border:0 !important;
+}
+
+#message-form {
+    align-content: center;
+}
+
+#message-form-area {
+    text-align: center;
+}
+
+.attach_btn{
+    float: left;
+    height: 60px;
+    margin-left: 30px;
+	border-radius: 15px 0 0 15px !important;
+	background-color: rgba(0,0,0,0.3) !important;
+	border:0 !important;
+	color: white !important;
+	cursor: pointer;
+}
+.send_btn{
+    float: right;
+    height: 60px;
+    margin-right: 20px;
+	border-radius: 0 15px 15px 0 !important;
+	background-color: rgba(0,0,0,0.3) !important;
+	border:0 !important;
+	color: white !important;
+	cursor: pointer;
+}
+
+.type_msg{
+    background-color: rgba(0,0,0,0.4) !important;
+    border:0 !important;
+    color:white !important;
+    height: 60px !important;
+    overflow-y: auto;
+}
+    .type_msg:focus{
+     box-shadow:none !important;
+    outline:0px !important;
+}
+.input-group-append {
+    display: inline-block;
+}
+
