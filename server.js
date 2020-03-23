@@ -35,7 +35,7 @@ io.on('connection',(socket) => {
         io.emit('has disconnected', {username: name, userList: users});
     });
 
-    socket.on('new message', (message) => {
-        io.emit('new message', message);
+    socket.on('new message', (data) => {
+        io.emit('new message', data);
     });
 });

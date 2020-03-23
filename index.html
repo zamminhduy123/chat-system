@@ -58,7 +58,7 @@
         <div id = 'message-area'>
             <div id = 'display-message'>
                 <ul id = 'message'>
-                    <li>Testing</li>
+                    
                 </ul>
             </div>
             <div id = 'message-form-area'>
@@ -66,9 +66,9 @@
                     <div class="input-group-append ">
                         <span class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span>
                     </div>
-                    <textarea name="" class="form-control type_msg" placeholder="Type your message..."></textarea>
+                    <textarea id = 'input-message' form = 'message-form' name="" class="form-control type_msg" placeholder="Type your message..."></textarea>
                     <div class="input-group-append">
-                        <span class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></span>
+                        <span onclick = 'sendOnClick()' class="input-group-text send_btn" id = 'send-btn'><i class="fas fa-location-arrow"></i></span>
                     </div>
                 </form>
             </div>
@@ -87,7 +87,7 @@
 
         $('#login-form').submit((event) => {
             event.preventDefault();
-            if ($('#username'). val() == "" || $('#username').val() == " "){
+            if ($('#username').val() == "" || $('#username').val() == " "){
                 alert('Invalid username!!!');
             } else {
                 $username = $('#username').val();
@@ -110,17 +110,24 @@
 
         $('#message-form').submit((e)=> {
             e.preventDefault();
-
-            if ($('#message').val() == "" || $('#message').val()==" "){
+            var message = $.trim($("#input-message").val());
+            console.log(message);
+            if (message == "" || message ==" "){
                 alert('You must type something!!!');
             } else {
-                socket.emit('new message',$('#message').val());
+                socket.emit('new message',{username: $username, message: message});
+                $('#input-message').val("");
             }
         });
 
-        socket.on('new message',(message) => {
-            $('message').append('<li>'+message+'</li>');
+        socket.on('new message',(data) => {
+            $('#message').append('<li><b>'+data.username+': </b>'+data.message+'</li>');
         });
+
+        // click
+        var sendOnClick = () => {
+            $('#message-form').submit();
+        }
     </script>
 
 </html>

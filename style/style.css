@@ -173,11 +173,12 @@ body {
 
 
 #message li {
+    color: white;
     margin-bottom: 5px;
     list-style-type: none;
     padding: 10px 10px;
     border-radius: 15px !important;
-    background-color: rgba(0.3,0.3,0.3,0.2) !important;
+    background-color: rgba(0.3,0.3,0.3,0.6) !important;
     border:0 !important;
 }
 
@@ -208,6 +209,9 @@ body {
 	border:0 !important;
 	color: white !important;
 	cursor: pointer;
+}
+.send_btn:hover {
+    background-color: rgba(0,0,0,0.6) !important;
 }
 
 .type_msg{
