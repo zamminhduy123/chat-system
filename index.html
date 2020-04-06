@@ -24,17 +24,21 @@
     <title>Document</title>
 </head>
 <body>
-    <div id = 'login-area'>
+    <div id = 'login-area' >
         <div id = 'login-text'>
             <h1>Login Page</h1>
         </div>
             <div id = 'login-form-area'>
                 <form id = 'login-form'>
-                    <input id = 'username' type = 'text' placeholder = 'Username' autocomplete="off">
+                    <input id = 'username' type = 'text' placeholder = 'Username' autocomplete="off" required>
+                    
+                    <input type="password" id="pwd" name="pwd" placeholder = "Password" autocomplete="off" required>
+
                     <input id = 'login-submit' type = 'submit' value = 'Login'>
                 </form>
+                <button id = "sign-up-page">Sign Up</button>
             </div>
-    </div>
+        </div>
     <div id = 'chat-area'>
         <div id = 'online-user'>
             <div class="card-header">
@@ -73,7 +77,22 @@
                 </form>
             </div>
         </div>
-        
+    </div>
+    <div id = "sign-up-area" hidden = "true">
+        <div id = 'sign-up-text'>
+            <h1>Sign Up Page</h1>
+            <div id = sign-up-form-area>
+                <form id = 'sign-up-form'>
+                    <input id = 'Susername' type = 'text' placeholder = 'Username' autocomplete="off" required>
+                    
+                    <input type="password" class="Spwd" name="pwd" placeholder = "Password" autocomplete="off" id = 'sign-up-pwd' required>
+
+                    <input type="password" class="Spwd" name="pwd" placeholder = "Re-type password" autocomplete="off" id = 'sign-up-rePwd' required>
+
+                    <input id = 'sign-up-submit' type = 'submit' value = 'Sign Up'>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
     <script type = "text/javascript">
@@ -87,15 +106,25 @@
 
         $('#login-form').submit((event) => {
             event.preventDefault();
-            if ($('#username').val() == "" || $('#username').val() == " "){
-                alert('Invalid username!!!');
-            } else {
-                $username = $('#username').val();
-                $('#login-area').hide();
-                $('#chat-area').show();
-
-                socket.emit('has connected',$username);
-            }
+            var data = {
+                    username: $('#username').val(),
+                    password: $('#pwd').val()
+            };
+    
+            $.ajax({
+                type: "POST",
+                url: '/login',
+                data: data,
+                dataType: 'json',
+                statusCode: {
+                    200: function() {
+                        $username = $('#username').val();
+                        $('#login-area').hide();
+                        $('#chat-area').show();
+                        socket.emit('has connected',$username);
+                  }
+                } 
+            })
         });
         socket.on('has connected', (data) => {
             $('#user-list').html("");
@@ -129,5 +158,6 @@
             $('#message-form').submit();
         }
     </script>
+    <script src = './backEnd.js'></script>
 
 </html>

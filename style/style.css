@@ -19,43 +19,89 @@ body {
     width: 500px;
     height: 300px;
     border: 1px solid purple;
-    border-radius: 10%;
+    border-radius: 15px;
     margin: auto;
     margin-top: 150px;
 }
 
-#login-area #login-text{
+#sign-up-area {
+    width: 500px;
+    height: 350px;
+    border: 1px solid purple;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 150px;
+}
+
+#login-area #login-text, #sign-up-text{
     width: 100%;
     margin-top: 50px;
     text-align: center;
     color: palevioletred;
 }
 
-#login-area #login-form-area {
+#login-area #login-form-area, #sign-up-form-area {
     width:100%;
     margin-top: 50px;
     text-align: center;
 }
-#login-area #login-form-area #login-form #username{
+
+#login-area #login-form-area #login-form #username, #Susername{
     height: 50px;
     width: 300px;
     padding: 0px 5px;
     font-size: 26px;
     outline-offset: 0;
     outline-color: purple;
+    float: left;
+    margin-left: 1.8em;
 }
-#login-area #login-form-area #login-form #login-submit {
+
+#pwd,.Spwd {
+    height: 50px;
+    width: 300px;
+    padding: 0px 5px;
+    font-size: 26px;
+    outline-offset: 0;
+    outline-color: purple;
+    float: left;
+    margin-left: 1.8em;
+    margin-top: 5px;
+}
+
+#login-area #login-form-area #login-form #login-submit, #sign-up-page {
     font-size: 26px;
     background-color: transparent;
     border: 1px solid black;
     height: 52px;
     width: 100px;
     padding: 2px;
-    border-radius: 10%;
+    border-radius: 15px;
     cursor: pointer;
+    margin-right: 1em;
+    margin-top: 0.2em;
 }
 
-#login-area #login-form-area #login-form #login-submit:hover{
+
+
+#sign-up-submit {
+    font-size: 26px;
+    background-color: transparent;
+    border: 1px solid black;
+    height: 52px;
+    width: 100px;
+    padding: 2px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-right: 1em;
+    margin-top: 2em;
+}
+
+#login-submit {
+    margin-top: 0.5em;
+}
+
+#login-area #login-form-area #login-form #login-submit:hover, #sign-up-page:hover, #sign-up-submit:hover{
     color: #FFF;
     background-color:palevioletred;
 }
